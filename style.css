@@ -132,6 +132,7 @@ footer {
   font-weight: 600;
   font-size: 0.95rem;
   text-align: center;
+  z-index: 1;
 }
 
 .photo-slot img {
