@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For Shreemoyee</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  </head>
+  <body>
+    <div class="sparkle" style="top: 10%; left: 20%; animation-delay: 0s"></div>
+    <div class="sparkle" style="top: 30%; left: 70%; animation-delay: 2s"></div>
+    <div class="sparkle" style="top: 50%; left: 40%; animation-delay: 4s"></div>
+    <div class="sparkle" style="top: 80%; left: 60%; animation-delay: 6s"></div>
+
+    <div class="background-swiftie"></div>
+
+    <div class="card-container">
+      <div class="card" id="flip-card">
+        <!-- Front of the card -->
+        <div class="card-face card-front">
+          <h1>Hey Shreemoyee 🌸</h1>
+          <div class="content">
+            <div class="text-block">
+              <p>
+                It’s actually crazy how we’ve known each other since Class 3 😅
+              </p>
+              <p>
+                From fighting over the smallest stuff 🤷‍♂️ to being completely
+                chill now... it’s been a journey.
+              </p>
+              <p>
+                I sometimes start laughing once I remember the silly things we
+                used to argue over 😜
+              </p>
+            </div>
+            <label class="photo-slot">
+              <span class="placeholder-text">Add an amazing pic here 📸</span>
+              <input
+                type="file"
+                accept="image/*"
+                onchange="previewImage(this)"
+              />
+              <img class="preview-img" style="display: none" />
+            </label>
+          </div>
+        </div>
+
+        <!-- Back of the card -->
+        <div class="card-face card-back">
+        <h1>More Stuff 💖</h1>
+        <div class="content">
+            <div class="text-block">
+            <p>From loving unicorns 🦄 to becoming a full-on Swiftie 🎤 — iconic evolution.</p>
+            <p>You're funny 😄, unpredictable (in the best way) 🎢, and genuinely kind 💗</p>
+            <p>I hope I've been a good friend too. Let’s not lose touch, okay? 💌</p>
+            </div>
+            <label class="photo-slot upload-label">
+            <span>Upload another memory 📁</span>
+            <input type="file" accept="image/*" onchange="previewImage(this, 1)" />
+            <img id="preview1" class="preview-img" style="display: none;" />
+            </label>
+        </div>
+        <footer>– Shourya 🚀</footer>
+        </div>
+
+            
+          </footer>
+        </div>
+      </div>
+    </div>
+
+    <audio id="bg-music" autoplay loop>
+      <source src="Taylor Swift - Shake It Off.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+
+    <button id="screenshotBothBtn">📸 Save Both Sides</button>
+
+    <script src="script.js"></script>
+  </body>
+</html>
