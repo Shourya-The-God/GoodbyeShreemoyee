@@ -126,7 +126,7 @@ footer {
   overflow: hidden;
 }
 
-.photo-slot.placeholder::before {
+.photo-slot::before {
   content: 'Click to upload a memory 📸';
   color: #b3478c;
   font-weight: 600;
