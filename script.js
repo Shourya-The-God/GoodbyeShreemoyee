@@ -18,23 +18,24 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 // Function to preview uploaded image
-function previewImage(input) {
+function handleImageUpload(input) {
+  const slot = input.parentElement;
   const file = input.files[0];
-  const preview = input.nextElementSibling; // The <img> element after input
-  const placeholder = input
-    .closest(".photo-slot")
-    .querySelector(".placeholder-text");
 
   if (file) {
     const reader = new FileReader();
     reader.onload = function (e) {
-      preview.src = e.target.result;
-      preview.style.display = "block"; // Show the image
-      placeholder.style.display = "none"; // Hide the placeholder text
+      slot.classList.remove('placeholder'); // Remove placeholder style
+      slot.innerHTML = ''; // Clear placeholder text
+      const img = document.createElement('img');
+      img.src = e.target.result;
+      img.alt = 'Uploaded memory';
+      slot.appendChild(img);
     };
     reader.readAsDataURL(file);
   }
 }
+
 
 document.getElementById("screenshotBothBtn").addEventListener("click", () => {
   const front = document.querySelector(".card-front").cloneNode(true);
