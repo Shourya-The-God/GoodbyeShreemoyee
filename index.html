@@ -60,9 +60,13 @@
             <p>I hope I've been a good friend too. Let’s not lose touch, okay? 💌</p>
             </div>
             <label class="photo-slot upload-label">
-            <span>Upload another memory 📁</span>
-            <input type="file" accept="image/*" onchange="previewImage(this, 1)" />
-            <img id="preview1" class="preview-img" style="display: none;" />
+              <span class="placeholder-text">Upload another memory 📁</span>
+              <input
+                type="file"
+                accept="image/*"
+                onchange="previewImage(this)"
+              />
+              <img class="preview-img" style="display: none" />
             </label>
         </div>
         <footer>– Shourya 🚀</footer>
