@@ -48,14 +48,15 @@ body {
 
 .card {
   width: 100%;
+  max-width: 500px;
   aspect-ratio: 2.5 / 3.5;
   position: relative;
   transform-style: preserve-3d;
   transition: transform 1s;
   cursor: pointer;
-  max-width: 500px;
   margin: auto;
 }
+
 
 .card.flipped {
   transform: rotateY(180deg);
@@ -72,6 +73,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .card-front {
@@ -160,17 +163,13 @@ footer {
   background-color: #e55b98;
 }
 
-@media (max-width: 480px) {
-  #screenshotBothBtn {
-    font-size: 0.9rem;
-    padding: 10px 18px;
-    max-width: 90%;
+@media (max-width: 768px) {
+  .card-container {
+    width: 95vw;
   }
-}
-
 
   .card-face {
-    padding: 20px;
+    padding: 16px;
   }
 
   h1 {
@@ -179,6 +178,7 @@ footer {
 
   .content p {
     font-size: 0.95rem;
+    word-wrap: break-word;
   }
 
   .preview-img {
@@ -188,7 +188,7 @@ footer {
 
 @media (max-width: 480px) {
   .card-face {
-    padding: 15px;
+    padding: 12px;
   }
 
   h1 {
@@ -197,9 +197,15 @@ footer {
 
   .content p {
     font-size: 0.9rem;
+    word-wrap: break-word;
   }
 
   .preview-img {
-    max-height: 150px;
+    max-height: 160px;
+  }
+
+  #screenshotBtn {
+    font-size: 0.85rem;
   }
 }
+
