@@ -114,36 +114,35 @@ footer {
 .photo-slot {
   border: 2px dashed #ff9ad6;
   border-radius: 15px;
-  padding: 14px;
   background-color: #fff0fa;
   cursor: pointer;
   position: relative;
   text-align: center;
-  transition: all 0.3s ease-in-out;
-  min-height: 100px;
+  padding: 10px;
+  min-height: 120px;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
-.placeholder-text {
+.photo-slot.placeholder::before {
+  content: 'Click to upload a memory 📸';
   color: #b3478c;
   font-weight: 600;
+  font-size: 0.95rem;
+  text-align: center;
 }
 
-.photo-slot input {
-  display: none;
-}
-
-.preview-img {
+.photo-slot img {
   width: 100%;
-  max-height: 250px;
+  height: auto;
+  max-height: 100%;
   object-fit: contain;
   border-radius: 10px;
-  display: block;
-  transition: all 0.3s ease-in-out;
-  border: 3px solid #ff66a8; /* Border added to the image */
+  border: 2px solid #ff9ad6;
 }
+
 
 #screenshotBothBtn {
   margin: 25px auto 0 auto;
