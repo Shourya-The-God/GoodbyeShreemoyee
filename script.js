@@ -25,8 +25,8 @@ function handleImageUpload(input) {
   if (file) {
     const reader = new FileReader();
     reader.onload = function (e) {
-      slot.classList.remove('placeholder'); // Remove placeholder style
-      slot.innerHTML = ''; // Clear placeholder text
+      slot.classList.remove('placeholder');
+      slot.innerHTML = ''; // Clear previous content
       const img = document.createElement('img');
       img.src = e.target.result;
       img.alt = 'Uploaded memory';
@@ -35,6 +35,15 @@ function handleImageUpload(input) {
     reader.readAsDataURL(file);
   }
 }
+
+// Make clicking the slot open file input
+document.querySelectorAll('.photo-slot').forEach(slot => {
+  slot.addEventListener('click', () => {
+    const input = slot.querySelector('input');
+    if (input) input.click();
+  });
+});
+
 
 
 document.getElementById("screenshotBothBtn").addEventListener("click", () => {
