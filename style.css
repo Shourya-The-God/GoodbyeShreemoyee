@@ -122,19 +122,27 @@ footer {
 }
 
 .photo-slot {
+  position: relative;
   border: 2px dashed #ff9ad6;
   border-radius: 15px;
   background-color: #fff0fa;
-  cursor: pointer;
-  position: relative;
   text-align: center;
-  padding: 10px;
-  min-height: 120px;
+  min-height: 100px;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   overflow: hidden;
+  cursor: pointer;
 }
+
+.photo-slot input[type="file"] {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
 
 .photo-slot::before {
   color: #b3478c;
