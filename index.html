@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   </head>
+
   <body>
     <div class="sparkle" style="top: 10%; left: 20%; animation-delay: 0s"></div>
     <div class="sparkle" style="top: 30%; left: 70%; animation-delay: 2s"></div>
@@ -21,7 +22,7 @@
 
     <div class="card-container">
       <div class="card" id="flip-card">
-        <!-- Front of the card -->
+        <!-- Front -->
         <div class="card-face card-front">
           <h1>Hey Shreemoyee 🌸</h1>
           <div class="content">
@@ -34,54 +35,54 @@
                 chill now... it’s been a journey.
               </p>
               <p>
-                I sometimes start laughing once I remember the silly things we
-                used to argue over 😜
+                I sometimes start laughing when I remember the dumb stuff we
+                used to argue about 😜
               </p>
             </div>
-            <label class="photo-slot">
-              <span class="placeholder-text">Add an amazing pic here 📸</span>
-              <input
-                type="file"
-                accept="image/*"
-                onchange="handleImageUpload(this)"
-              />
-            </label>
+
+            <div class="photo-container">
+              <img src="photo.jpg" alt="Front Memory" class="preview-img" />
+            </div>
           </div>
         </div>
 
-        <!-- Back of the card -->
+        <!-- Back -->
         <div class="card-face card-back">
-        <h1>More Stuff 💖</h1>
-        <div class="content">
+          <h1>More Stuff 🎤</h1>
+          <div class="content">
             <div class="text-block">
-            <p>From loving unicorns 🦄 to becoming a full-on Swiftie 🎤 — iconic evolution.</p>
-            <p>You're funny 😄, unpredictable (in the best way) 🎢, and genuinely kind 💗</p>
-            <p>I hope I've been a good friend too. Let’s not lose touch, okay? 💌</p>
+              <p>
+                From loving unicorns 🦄 to becoming a full-on Swiftie 🎶 — what
+                an evolution.
+              </p>
+              <p>Honestly, I don't even know how we're still friends tbh 😂</p>
+              <p>
+                We should definitely stay in touch though, don't be a stranger
+                📬
+              </p>
             </div>
-            <label class="photo-slot upload-label">
-              <span class="placeholder-text">Upload another memory 📁</span>
-              <input
-                type="file"
-                accept="image/*"
-                onchange="handleImageUpload(this)"
-              />
-            </label>
-        </div>
-        <footer>– Shourya 🚀</footer>
-        </div>
 
-            
-          </footer>
+            <div class="photo-container">
+              <div class="photo-caption">A relic from the past 📸</div>
+              <img
+                src="A relic from the past.jpg"
+                alt="Back Memory"
+                class="preview-img"
+              />
+            </div>
+          </div>
+          <footer>– Shourya 🚀</footer>
         </div>
       </div>
     </div>
+
+    <!-- Save Button under the card -->
+    <button id="screenshotBothBtn">📸 Save Card</button>
 
     <audio id="bg-music" autoplay loop>
       <source src="Taylor Swift - Shake It Off.mp3" type="audio/mpeg" />
       Your browser does not support the audio element.
     </audio>
-
-    <button id="screenshotBothBtn">📸 Save Both Sides</button>
 
     <script src="script.js"></script>
   </body>
