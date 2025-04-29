@@ -1,3 +1,4 @@
+<script>
 const card = document.getElementById("flip-card");
 card.addEventListener("click", () => {
   card.classList.toggle("flipped");
@@ -5,14 +6,12 @@ card.addEventListener("click", () => {
 
 window.addEventListener("DOMContentLoaded", () => {
   const music = document.getElementById("bg-music");
-
   const enableAudio = () => {
-    music.play().catch((e) => {
+    music.play().catch(() => {
       console.log("Autoplay blocked. User interaction needed.");
     });
     document.removeEventListener("click", enableAudio);
   };
-
   document.addEventListener("click", enableAudio);
 });
 
@@ -27,9 +26,8 @@ document.getElementById("screenshotBothBtn").addEventListener("click", () => {
     face.style.boxShadow = "0 15px 30px rgba(0, 0, 0, 0.1)";
     face.style.margin = "0 10px";
     face.style.width = "300px";
-    face.style.height = "auto";
+    face.style.minHeight = "500px";
     face.style.flexShrink = "0";
-    face.style.overflow = "hidden";
     face.classList.remove("card-face");
 
     const img = face.querySelector("img");
@@ -37,7 +35,7 @@ document.getElementById("screenshotBothBtn").addEventListener("click", () => {
       img.style.width = "100%";
       img.style.height = "auto";
       img.style.objectFit = "contain";
-      img.style.maxHeight = "250px";
+      img.style.maxHeight = "280px";
       img.style.display = "block";
     }
   });
@@ -54,7 +52,6 @@ document.getElementById("screenshotBothBtn").addEventListener("click", () => {
   screenshotContainer.style.gap = "20px";
   screenshotContainer.style.maxWidth = "100%";
   screenshotContainer.style.flexWrap = "nowrap";
-  screenshotContainer.style.overflow = "hidden";
 
   screenshotContainer.appendChild(front);
   screenshotContainer.appendChild(back);
@@ -73,3 +70,4 @@ document.getElementById("screenshotBothBtn").addEventListener("click", () => {
     document.body.removeChild(screenshotContainer);
   });
 });
+</script>
