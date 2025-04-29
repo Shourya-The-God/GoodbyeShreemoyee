@@ -12,9 +12,9 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: auto;
-  position: relative;
+  overflow-x: hidden;
   padding: 20px;
+  position: relative;
 }
 
 .sparkle {
@@ -50,17 +50,12 @@ body {
 .card {
   width: 100%;
   max-width: 500px;
-  aspect-ratio: 2.5 / 3.5;
-  height: auto;
-  min-height: 620px;
+  min-height: 800px; /* increase overall card height */
   position: relative;
   transform-style: preserve-3d;
   transition: transform 1s;
   cursor: pointer;
   margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
 }
 
 .card.flipped {
@@ -78,6 +73,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow-y: auto;
 }
 
 .card-front {
@@ -116,7 +112,7 @@ footer {
 
 .photo-container {
   text-align: center;
-  margin-top: 25px;
+  margin-top: 20px;
 }
 
 .preview-img {
@@ -141,8 +137,8 @@ footer {
 }
 
 #screenshotBothBtn {
-  margin-top: 50px;
-  padding: 14px 26px;
+  margin-top: 80px; /* pushed down further */
+  padding: 14px 28px;
   background-color: #ff66a8;
   color: white;
   border: none;
@@ -158,40 +154,13 @@ footer {
   background-color: #e55b98;
 }
 
-/* Responsive Styles */
 @media (max-width: 768px) {
   .card {
-    min-height: 700px;
+    min-height: 850px;
   }
 
   h1 {
-    font-size: 1.6rem;
-  }
-
-  .content p {
-    font-size: 1rem;
-  }
-
-  .preview-img {
-    max-height: 330px;
-  }
-
-  #screenshotBothBtn {
-    margin-top: 60px;
-  }
-}
-
-@media (max-width: 480px) {
-  .card {
-    min-height: 760px;
-  }
-
-  .card-face {
-    padding: 20px;
-  }
-
-  h1 {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
 
   .content p {
@@ -199,10 +168,36 @@ footer {
   }
 
   .preview-img {
-    max-height: 310px;
+    max-height: 320px;
   }
 
   #screenshotBothBtn {
-    margin-top: 70px;
+    margin-top: 90px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    min-height: 950px;
+  }
+
+  .card-face {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  .content p {
+    font-size: 0.9rem;
+  }
+
+  .preview-img {
+    max-height: 300px;
+  }
+
+  #screenshotBothBtn {
+    margin-top: 100px;
   }
 }
