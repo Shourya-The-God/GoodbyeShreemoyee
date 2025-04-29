@@ -10,10 +10,9 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  overflow-x: hidden;
   padding: 20px;
+  overflow-x: hidden;
   position: relative;
 }
 
@@ -50,7 +49,7 @@ body {
 .card {
   width: 100%;
   max-width: 500px;
-  min-height: 800px; /* increase overall card height */
+  min-height: 750px; /* Card body made taller */
   position: relative;
   transform-style: preserve-3d;
   transition: transform 1s;
@@ -73,7 +72,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  overflow-y: auto;
+  overflow: hidden;
 }
 
 .card-front {
@@ -117,8 +116,7 @@ footer {
 
 .preview-img {
   width: 100%;
-  height: auto;
-  max-height: 300px;
+  max-height: 280px; /* Limit photo height */
   object-fit: contain;
   border-radius: 15px;
   background: rgba(255, 255, 255, 0.5);
@@ -137,7 +135,7 @@ footer {
 }
 
 #screenshotBothBtn {
-  margin-top: 80px; /* pushed down further */
+  margin-top: 60px;
   padding: 14px 28px;
   background-color: #ff66a8;
   color: white;
@@ -154,13 +152,28 @@ footer {
   background-color: #e55b98;
 }
 
+/* Mobile Tweaks */
 @media (max-width: 768px) {
   .card {
-    min-height: 850px;
+    min-height: 820px;
+  }
+
+  .preview-img {
+    max-height: 300px;
+  }
+
+  #screenshotBothBtn {
+    margin-top: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    min-height: 880px;
   }
 
   h1 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
   .content p {
@@ -169,32 +182,6 @@ footer {
 
   .preview-img {
     max-height: 320px;
-  }
-
-  #screenshotBothBtn {
-    margin-top: 90px;
-  }
-}
-
-@media (max-width: 480px) {
-  .card {
-    min-height: 950px;
-  }
-
-  .card-face {
-    padding: 20px;
-  }
-
-  h1 {
-    font-size: 1.3rem;
-  }
-
-  .content p {
-    font-size: 0.9rem;
-  }
-
-  .preview-img {
-    max-height: 300px;
   }
 
   #screenshotBothBtn {
