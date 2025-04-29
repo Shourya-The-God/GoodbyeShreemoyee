@@ -55,7 +55,7 @@ body {
   transition: transform 1s;
   cursor: pointer;
   margin: auto;
-  height: 600px; /* Ensure card has a defined height */
+  height: auto; /* Make sure card adjusts height dynamically */
 }
 
 .card.flipped {
@@ -119,8 +119,7 @@ footer {
 .preview-img {
   width: 100%;
   height: auto;
-  max-height: 250px;
-  object-fit: cover;
+  object-fit: cover; /* Ensure images fill the container without overflow */
   border-radius: 15px;
   background: rgba(255, 255, 255, 0.5);
   padding: 6px;
@@ -165,7 +164,7 @@ footer {
   }
 
   .card {
-    height: 650px; /* Adjust height to fit mobile screens */
+    height: auto;
   }
 
   h1 {
@@ -183,7 +182,7 @@ footer {
 
 @media (max-width: 480px) {
   .card {
-    height: 700px; /* Adjust height further for smaller devices */
+    height: auto; /* Card will scale based on content */
   }
 
   .card-face {
