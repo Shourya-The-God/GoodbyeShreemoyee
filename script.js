@@ -21,55 +21,55 @@ document.getElementById("screenshotBothBtn").addEventListener("click", () => {
   const back = document.querySelector(".card-back").cloneNode(true);
 
   [front, back].forEach((face) => {
-    face.style.position = "static";
+    face.style.position = "relative";
     face.style.transform = "none";
     face.style.backfaceVisibility = "visible";
     face.style.boxShadow = "0 15px 30px rgba(0, 0, 0, 0.1)";
-    face.style.margin = "0 10px";
-    face.style.width = "300px"; // Match your actual card width
+    face.style.margin = "0 0 20px 0";
+    face.style.width = "100%";
+    face.style.maxWidth = "400px";
     face.style.height = "auto";
-    face.style.flexShrink = "0";
     face.classList.remove("card-face");
 
-    // Fix image rendering
     const img = face.querySelector("img");
     if (img) {
       img.style.width = "100%";
       img.style.height = "auto";
-      img.style.objectFit = "cover";
+      img.style.objectFit = "contain";
       img.style.maxHeight = "250px";
       img.style.display = "block";
     }
   });
 
   const screenshotContainer = document.createElement("div");
-  screenshotContainer.style.position = "fixed";
-  screenshotContainer.style.top = "-9999px";
-  screenshotContainer.style.left = "-9999px";
+  screenshotContainer.style.position = "absolute";
+  screenshotContainer.style.top = "0";
+  screenshotContainer.style.left = "0";
   screenshotContainer.style.display = "flex";
   screenshotContainer.style.flexDirection = "column";
-  screenshotContainer.style.alignItems = "flex-start";
+  screenshotContainer.style.alignItems = "center";
   screenshotContainer.style.padding = "20px";
-  screenshotContainer.style.background =
-    "linear-gradient(135deg, #ffe4f0, #e0c3fc)";
+  screenshotContainer.style.background = "white";
   screenshotContainer.style.gap = "20px";
-  screenshotContainer.style.maxWidth = "100%";
-  screenshotContainer.style.flexWrap = "nowrap";
+  screenshotContainer.style.width = "100%";
+  screenshotContainer.style.zIndex = "-1"; // hidden but capturable
 
   screenshotContainer.appendChild(front);
   screenshotContainer.appendChild(back);
   document.body.appendChild(screenshotContainer);
 
-  html2canvas(screenshotContainer, {
-    useCORS: true,
-    scale: 2,
-    allowTaint: true,
-    backgroundColor: null,
-  }).then((canvas) => {
-    const link = document.createElement("a");
-    link.download = "shreemoyee_card_full.png";
-    link.href = canvas.toDataURL("image/png");
-    link.click();
-    document.body.removeChild(screenshotContainer);
-  });
+  // Wait for rendering
+  setTimeout(() => {
+    html2canvas(screenshotContainer, {
+      useCORS: true,
+      scale: 2,
+      backgroundColor: null,
+    }).then((canvas) => {
+      const link = document.createElement("a");
+      link.download = "shreemoyee_card_vertical.png";
+      link.href = canvas.toDataURL("image/png");
+      link.click();
+      document.body.removeChild(screenshotContainer);
+    });
+  }, 100);
 });
