@@ -58,7 +58,8 @@ body {
   margin: auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start; /* Ensures content starts from top */
+  height: auto; /* Dynamically adjust height */
 }
 
 .card.flipped {
@@ -115,6 +116,7 @@ footer {
 .photo-container {
   text-align: center;
   margin-top: 20px;
+  flex-grow: 1; /* Ensure the photo container takes up available space */
 }
 
 .preview-img {
@@ -164,12 +166,13 @@ footer {
 
   .card {
     max-width: 100%;
-    height: auto;
     padding: 25px;
+    height: auto; /* Ensure height adjusts */
+    margin-top: 30px; /* Give space at the top of the card */
   }
 
   .card-face {
-    padding: 30px;
+    padding: 20px;
   }
 
   h1 {
@@ -201,6 +204,7 @@ footer {
   .card {
     height: auto;
     padding: 15px;
+    margin-top: 30px; /* Add margin to separate from top */
   }
 
   .card-face {
@@ -220,5 +224,10 @@ footer {
     object-fit: contain;
     width: auto;
     max-width: 100%;
+  }
+
+  .card {
+    height: auto;
+    padding: 15px;
   }
 }
