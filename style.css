@@ -55,7 +55,7 @@ body {
   transition: transform 1s;
   cursor: pointer;
   margin: auto;
-  min-height: 600px; /* Allow card to grow if needed */
+  height: 600px; /* Ensure card has a defined height */
 }
 
 .card.flipped {
@@ -164,6 +164,10 @@ footer {
     padding: 20px;
   }
 
+  .card {
+    height: 650px; /* Adjust height to fit mobile screens */
+  }
+
   h1 {
     font-size: 1.4rem;
   }
@@ -179,7 +183,7 @@ footer {
 
 @media (max-width: 480px) {
   .card {
-    min-height: 700px;
+    height: 700px; /* Adjust height further for smaller devices */
   }
 
   .card-face {
