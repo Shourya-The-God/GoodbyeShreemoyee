@@ -153,13 +153,49 @@ footer {
   background-color: #e55b98;
 }
 
+/* Mobile Styles */
 @media (max-width: 768px) {
   .card-container {
     width: 90vw;
   }
 
+  .card {
+    max-width: 100%; /* Ensure the card takes up available space */
+    height: auto;
+  }
+
   .card-face {
-    padding: 20px;
+    padding: 30px; /* Increase padding for better spacing */
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .content p {
+    font-size: 1.1rem; /* Slightly larger text for readability */
+  }
+
+  .preview-img {
+    max-height: 300px; /* Allow the image to be bigger */
+    object-fit: contain; /* Ensure the image stays contained */
+    width: auto; /* Maintain aspect ratio */
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-container {
+    width: 95vw; /* Make the card slightly bigger on very small screens */
+  }
+
+  .card {
+    height: auto;
+    padding: 15px;
+  }
+
+  .card-face {
+    padding: 25px; /* Increase padding a bit for more space */
   }
 
   h1 {
@@ -167,28 +203,13 @@ footer {
   }
 
   .content p {
-    font-size: 0.95rem;
+    font-size: 1rem; /* Ensure text is still readable */
   }
 
   .preview-img {
-    max-height: 200px;
-  }
-}
-
-@media (max-width: 480px) {
-  .card-face {
-    padding: 15px;
-  }
-
-  h1 {
-    font-size: 1.2rem;
-  }
-
-  .content p {
-    font-size: 0.9rem;
-  }
-
-  .preview-img {
-    max-height: 160px;
+    max-height: 250px; /* Adjust image size to fit better */
+    object-fit: contain;
+    width: auto;
+    max-width: 100%;
   }
 }
