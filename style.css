@@ -17,29 +17,6 @@ body {
   padding: 20px;
 }
 
-.sparkle {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background: #fff;
-  border-radius: 50%;
-  opacity: 0.7;
-  animation: float 10s infinite ease-in-out;
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(0) scale(1);
-  }
-  50% {
-    transform: translateY(-30px) scale(1.2);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(0) scale(1);
-  }
-}
-
 .card-container {
   perspective: 1200px;
   width: 100%;
@@ -49,7 +26,7 @@ body {
 
 .card {
   width: 100%;
-  aspect-ratio: 2.5 / 3.5;
+  aspect-ratio: 2.5 / 3.5; /* Maintain the ratio for the card */
   position: relative;
   transform-style: preserve-3d;
   transition: transform 1s;
@@ -58,8 +35,8 @@ body {
   margin: auto;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Ensures content starts from top */
-  height: auto; /* Dynamically adjust height */
+  justify-content: flex-start;
+  height: 500px; /* Increase the card height */
 }
 
 .card.flipped {
@@ -116,13 +93,13 @@ footer {
 .photo-container {
   text-align: center;
   margin-top: 20px;
-  flex-grow: 1; /* Ensure the photo container takes up available space */
+  flex-grow: 1;
 }
 
 .preview-img {
   width: 100%;
   height: auto;
-  max-height: 220px;
+  max-height: 300px; /* Increase the image max height */
   object-fit: contain;
   border-radius: 15px;
   background: rgba(255, 255, 255, 0.5);
@@ -167,8 +144,8 @@ footer {
   .card {
     max-width: 100%;
     padding: 25px;
-    height: auto; /* Ensure height adjusts */
-    margin-top: 30px; /* Give space at the top of the card */
+    height: 600px; /* Increased card height on mobile */
+    margin-top: 30px;
   }
 
   .card-face {
@@ -184,15 +161,8 @@ footer {
   }
 
   .preview-img {
-    max-height: 300px;
+    max-height: 350px; /* Increased image size */
     object-fit: contain;
-    width: auto;
-    max-width: 100%;
-  }
-
-  .card {
-    height: auto;
-    padding: 20px;
   }
 }
 
@@ -202,9 +172,9 @@ footer {
   }
 
   .card {
-    height: auto;
+    height: 650px; /* Increased height for very small screens */
     padding: 15px;
-    margin-top: 30px; /* Add margin to separate from top */
+    margin-top: 30px;
   }
 
   .card-face {
@@ -220,14 +190,9 @@ footer {
   }
 
   .preview-img {
-    max-height: 250px;
+    max-height: 300px; /* Increased max height */
     object-fit: contain;
     width: auto;
     max-width: 100%;
-  }
-
-  .card {
-    height: auto;
-    padding: 15px;
   }
 }
