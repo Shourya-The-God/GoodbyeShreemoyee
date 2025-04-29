@@ -12,8 +12,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: auto;
-  position: relative;
+  overflow-x: hidden;
   padding: 20px;
 }
 
@@ -133,6 +132,7 @@ footer {
   margin-bottom: 10px;
   font-style: italic;
   font-weight: 600;
+  text-align: center;
 }
 
 #screenshotBothBtn {
