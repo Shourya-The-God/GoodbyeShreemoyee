@@ -56,6 +56,9 @@ body {
   cursor: pointer;
   max-width: 500px;
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card.flipped {
@@ -160,12 +163,13 @@ footer {
   }
 
   .card {
-    max-width: 100%; /* Ensure the card takes up available space */
+    max-width: 100%;
     height: auto;
+    padding: 25px;
   }
 
   .card-face {
-    padding: 30px; /* Increase padding for better spacing */
+    padding: 30px;
   }
 
   h1 {
@@ -173,20 +177,25 @@ footer {
   }
 
   .content p {
-    font-size: 1.1rem; /* Slightly larger text for readability */
+    font-size: 1.1rem;
   }
 
   .preview-img {
-    max-height: 300px; /* Allow the image to be bigger */
-    object-fit: contain; /* Ensure the image stays contained */
-    width: auto; /* Maintain aspect ratio */
+    max-height: 300px;
+    object-fit: contain;
+    width: auto;
     max-width: 100%;
+  }
+
+  .card {
+    height: auto;
+    padding: 20px;
   }
 }
 
 @media (max-width: 480px) {
   .card-container {
-    width: 95vw; /* Make the card slightly bigger on very small screens */
+    width: 95vw;
   }
 
   .card {
@@ -195,7 +204,7 @@ footer {
   }
 
   .card-face {
-    padding: 25px; /* Increase padding a bit for more space */
+    padding: 25px;
   }
 
   h1 {
@@ -203,11 +212,11 @@ footer {
   }
 
   .content p {
-    font-size: 1rem; /* Ensure text is still readable */
+    font-size: 1rem;
   }
 
   .preview-img {
-    max-height: 250px; /* Adjust image size to fit better */
+    max-height: 250px;
     object-fit: contain;
     width: auto;
     max-width: 100%;
