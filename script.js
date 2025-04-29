@@ -6,7 +6,6 @@ card.addEventListener("click", () => {
 window.addEventListener("DOMContentLoaded", () => {
   const music = document.getElementById("bg-music");
 
-  // Autoplay after first user interaction (needed for most browsers)
   const enableAudio = () => {
     music.play().catch((e) => {
       console.log("Autoplay blocked. User interaction needed.");
@@ -17,40 +16,10 @@ window.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("click", enableAudio);
 });
 
-// Function to preview uploaded image
-function handleImageUpload(input) {
-  const slot = input.parentElement;
-  const file = input.files[0];
-
-  if (file) {
-    const reader = new FileReader();
-    reader.onload = function (e) {
-      slot.classList.remove('placeholder');
-      slot.innerHTML = ''; // Clear previous content
-      const img = document.createElement('img');
-      img.src = e.target.result;
-      img.alt = 'Uploaded memory';
-      slot.appendChild(img);
-    };
-    reader.readAsDataURL(file);
-  }
-}
-
-// Make clicking the slot open file input
-document.querySelectorAll('.photo-slot').forEach(slot => {
-  slot.addEventListener('click', () => {
-    const input = slot.querySelector('input');
-    if (input) input.click();
-  });
-});
-
-
-
 document.getElementById("screenshotBothBtn").addEventListener("click", () => {
   const front = document.querySelector(".card-front").cloneNode(true);
   const back = document.querySelector(".card-back").cloneNode(true);
 
-  // Clean up cloned styles
   [front, back].forEach((face) => {
     face.style.position = "static";
     face.style.transform = "none";
@@ -60,7 +29,6 @@ document.getElementById("screenshotBothBtn").addEventListener("click", () => {
     face.classList.remove("card-face");
   });
 
-  // Create hidden container for screenshot
   const screenshotContainer = document.createElement("div");
   screenshotContainer.style.position = "fixed";
   screenshotContainer.style.top = "-9999px";
@@ -75,7 +43,6 @@ document.getElementById("screenshotBothBtn").addEventListener("click", () => {
   screenshotContainer.appendChild(back);
   document.body.appendChild(screenshotContainer);
 
-  // Screenshot
   html2canvas(screenshotContainer, { useCORS: true, scale: 2 }).then(
     (canvas) => {
       const link = document.createElement("a");
