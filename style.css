@@ -1,222 +1,149 @@
-/* Global Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* Reset and base styles */
 body {
+  margin: 0;
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(135deg, #ffe4f0, #e0c3fc);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow: auto;
+  background-color: #fdf6f9;
+  overflow-x: hidden;
   position: relative;
-  padding: 20px;
-  background-color: #f9f9f9;
 }
 
-/* Sparkle Animation */
+/* Sparkles (animated dots) */
 .sparkle {
   position: absolute;
-  width: 15px;
-  height: 15px;
-  background-color: rgba(255, 255, 255, 0.9);
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
   border-radius: 50%;
-  animation: sparkle 2s infinite ease-in-out;
-  z-index: 1;
+  box-shadow: 0 0 10px #fff;
+  animation: sparkleAnim 4s infinite ease-in-out;
+  z-index: 5;
 }
 
-@keyframes sparkle {
-  0% {
-    transform: scale(1) translateY(0) rotate(0);
-    opacity: 0.8;
+@keyframes sparkleAnim {
+  0%, 100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
   }
   50% {
-    transform: scale(1.3) translateY(-50px) rotate(180deg);
-    opacity: 0.6;
-  }
-  100% {
-    transform: scale(1) translateY(0) rotate(360deg);
-    opacity: 0.8;
+    transform: scale(1.5) translateY(-20px);
+    opacity: 0.5;
   }
 }
 
-/* Background */
+/* Background behind card */
 .background-swiftie {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('swiftie-background.jpg') no-repeat center center fixed;
-  background-size: cover;
+  background: linear-gradient(135deg, #ffe4f0, #e0c3fc);
   z-index: -1;
 }
 
-/* Card Container */
+/* Card container centering */
 .card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   perspective: 1200px;
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
 }
 
+/* Card */
 .card {
-  width: 100%;
-  aspect-ratio: 2.5 / 3.5;
+  width: 380px;
+  height: 500px;
   position: relative;
   transform-style: preserve-3d;
-  transition: transform 1s;
+  transition: transform 0.8s ease;
   cursor: pointer;
-  max-width: 500px;
-  margin: auto;
 }
 
 .card.flipped {
   transform: rotateY(180deg);
 }
 
+/* Front & back faces */
 .card-face {
   position: absolute;
   width: 100%;
   height: 100%;
-  border-radius: 20px;
   backface-visibility: hidden;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
   padding: 25px;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
 .card-front {
-  background: #fff8fc;
-  color: #8b2f5e;
+  z-index: 2;
 }
 
 .card-back {
-  background: #ffccf9;
-  color: #4e1255;
   transform: rotateY(180deg);
 }
 
-h1 {
-  font-size: 1.8rem;
-  color: #ff66a8;
-  margin-bottom: 10px;
+/* Text content */
+.text-block p {
+  margin: 10px 0;
+  font-size: 15px;
+  line-height: 1.5;
 }
 
-.content p {
-  font-size: 1rem;
-  margin-bottom: 12px;
-  line-height: 1.7;
-  background: rgba(255, 255, 255, 0.3);
-  padding: 8px 12px;
-  border-radius: 12px;
-  backdrop-filter: blur(3px);
-}
-
-footer {
-  text-align: right;
-  font-weight: 600;
-  margin-top: 10px;
-  font-size: 0.95rem;
-}
-
+/* Image container */
 .photo-container {
-  text-align: center;
-  margin-top: 20px;
+  width: 100%;
+  max-height: 260px;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-top: 15px;
 }
 
-.preview-img {
+.photo-container img {
   width: 100%;
   height: auto;
-  object-fit: contain;
-  border-radius: 15px;
-  background: rgba(255, 255, 255, 0.5);
-  padding: 6px;
-  border: 2px solid #ff66a8;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease-in-out;
+  object-fit: cover;
+  border-radius: 12px;
 }
 
+/* Photo caption */
 .photo-caption {
-  font-size: 0.9rem;
-  color: #b3478c;
-  margin-bottom: 10px;
-  font-style: italic;
-  font-weight: 600;
+  text-align: center;
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 5px;
 }
 
-/* Save Button */
-#screenshotBothBtn {
-  margin-top: 30px;
+/* Footer (signature) */
+footer {
+  margin-top: 15px;
+  text-align: right;
+  font-weight: 600;
+  font-family: "Playfair Display", serif;
+}
+
+/* Save button */
+button#screenshotBothBtn {
+  display: block;
+  margin: 30px auto;
   padding: 12px 24px;
-  background-color: #ff66a8;
+  font-size: 16px;
+  background-color: #ff90c2;
   color: white;
   border: none;
-  border-radius: 10px;
-  font-size: 1rem;
+  border-radius: 30px;
+  box-shadow: 0 8px 20px rgba(255, 105, 180, 0.3);
   cursor: pointer;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  transition: background 0.3s ease;
+  z-index: 10;
+  position: relative;
 }
 
-#screenshotBothBtn:hover {
-  background-color: #e55b98;
-}
-
-/* Media Queries */
-@media (max-width: 768px) {
-  .card-container {
-    width: 90vw;
-  }
-
-  .card-face {
-    padding: 20px;
-  }
-
-  .card {
-    height: auto;
-  }
-
-  h1 {
-    font-size: 1.4rem;
-  }
-
-  .content p {
-    font-size: 0.95rem;
-  }
-
-  .preview-img {
-    max-height: 200px;
-  }
-}
-
-@media (max-width: 480px) {
-  .card {
-    height: auto;
-    width: 100%;
-  }
-
-  .card-face {
-    padding: 15px;
-  }
-
-  h1 {
-    font-size: 1.2rem;
-  }
-
-  .content p {
-    font-size: 0.9rem;
-  }
-
-  .preview-img {
-    max-height: 160px;
-  }
+button#screenshotBothBtn:hover {
+  background-color: #ff65af;
 }
